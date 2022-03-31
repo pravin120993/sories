@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Push') {
             steps {
                 script{
                     docker.withRegistry("${docker_registry_url}", "${docker_registry_credentials}") {
