@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Stories from "react-insta-stories";
 import "./App.css";
 
@@ -27,7 +27,8 @@ const stories = [
     },
   },
   {
-    url: "https://impact-feed-revamp.s3.ap-south-1.amazonaws.com//feed_title/1647853158573Untitled-1.jpg",
+    url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    type: "video",
   },
   {
     url: "https://impact-feed-revamp.s3.ap-south-1.amazonaws.com/Weight-Training-Vs-Cardio-/feed_title/1647436156786Untitled-1.jpg",
@@ -35,13 +36,41 @@ const stories = [
 ];
 
 function App() {
+  const [show, setShow] = useState(false);
+  const [stories2, setStories2] = useState(stories);
+  const onShow = () => {
+    setShow(true);
+  };
+  const onHide = () => {
+    setShow(false);
+  };
   return (
-    <Stories
-      stories={stories}
-      defaultInterval={4000}
-      width="100vw"
-      height="100vh"
-    />
+    <React.Fragment>
+      {show ? (
+        <div>
+          <span onClick={onHide}>x</span>
+          <Stories
+            stories={stories2}
+            defaultInterval={4000}
+            width="100vw"
+            height="100vh"
+            onStoryEnd={(s, st) => {
+              console.log("story ended", s, st);
+            }}
+            onAllStoriesEnd={(s, st) => {
+              setShow(false);
+              console.log("all stories ended", s, st);
+            }}
+            onStoryStart={(s, st) => {
+              console.log("story started", s, st);
+            }}
+            currentIndex={2}
+          />
+        </div>
+      ) : (
+        <span onClick={onShow}>Show</span>
+      )}
+    </React.Fragment>
   );
 }
 
