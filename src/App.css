@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.crossStyle {
+  color: white !important;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  z-index: 9999;
+}
+.soundIconStyle {
+  color: white !important;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 52px;
+  z-index: 9999;
+}
+.storiesParentDiv {
+  position: relative;
+}
