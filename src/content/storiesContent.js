@@ -13,16 +13,10 @@ export const stories = [
     url: "https://impact-feed-revamp.s3.ap-south-1.amazonaws.com/Turmeric%2C-The-Solution-To-All-Your-Problems-/feed_title/1648041063130pexels-tamanna-rumee-7988009.jpg",
     duration: 5000,
     seeMoreCollapsed: ({ toggleMore, action }) => (
-      <div className="customSeeMore box">
-        <p className="mx-0 arrow1" onClick={() => toggleMore(true)}>
-          ^
-        </p>
-        <p className="mx-0 arrow2" onClick={() => toggleMore(true)}>
-          ^
-        </p>
-        <p className="mx-0 arrow2" onClick={() => toggleMore(true)}>
-          Swipe up
-        </p>
+      <div className="customSeeMore box" onClick={() => toggleMore(true)}>
+        <p className="mx-0 arrow1">^</p>
+        <p className="mx-0 arrow2">^</p>
+        <p className="mx-0 arrow2">Swipe up</p>
       </div>
     ),
     seeMore: ({ close }) => {
