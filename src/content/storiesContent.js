@@ -12,6 +12,19 @@ export const stories = [
   {
     url: "https://impact-feed-revamp.s3.ap-south-1.amazonaws.com/Turmeric%2C-The-Solution-To-All-Your-Problems-/feed_title/1648041063130pexels-tamanna-rumee-7988009.jpg",
     duration: 5000,
+    seeMoreCollapsed: ({ toggleMore, action }) => (
+      <div className="customSeeMore box">
+        <p className="mx-0 arrow1" onClick={() => toggleMore(true)}>
+          ^
+        </p>
+        <p className="mx-0 arrow2" onClick={() => toggleMore(true)}>
+          ^
+        </p>
+        <p className="mx-0 arrow2" onClick={() => toggleMore(true)}>
+          Swipe up
+        </p>
+      </div>
+    ),
     seeMore: ({ close }) => {
       return (
         <div
@@ -31,3 +44,11 @@ export const stories = [
     url: "https://impact-feed-revamp.s3.ap-south-1.amazonaws.com/Weight-Training-Vs-Cardio-/feed_title/1647436156786Untitled-1.jpg",
   },
 ];
+
+const customSeeMore = {
+  textAlign: "center",
+  fontSize: 14,
+  bottom: 20,
+  position: "relative",
+  color: "white",
+};
