@@ -1,0 +1,13 @@
+{
+    "storiesConfig":{
+        "defaultInterval":4000,
+        "width":"100vw",
+        "height":"100vh"
+    },
+    "apiConfig":{
+        "apiEndPoints":"story.json",
+        "headers":{
+            "Content-type":"application/json"
+        }
+    }
+}
