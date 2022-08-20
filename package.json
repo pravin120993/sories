@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "react": "^16.14.0",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^16.14.0",
     "react-insta-stories": "^2.3.0",
     "react-scripts": "^3.4.4",

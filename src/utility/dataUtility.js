@@ -1,10 +1,18 @@
 import React from "react";
+import { openLink } from "../lib/android";
 class DataUtility {
+  static onSwipeUp = (toggleMore, data) => {
+    toggleMore(true);
+    openLink(data);
+  };
   static parseStoryData(data) {
     data.forEach((item) => {
       if (item.isSeeMore) {
         item["seeMoreCollapsed"] = ({ toggleMore, action }) => (
-          <div className="customSeeMore box" onClick={() => toggleMore(true)}>
+          <div
+            className="customSeeMore box"
+            onClick={() => DataUtility.onSwipeUp(toggleMore, item.seeMoreUrl)}
+          >
             <p className="mx-0 arrow1">^</p>
             <p className="mx-0 arrow2">^</p>
             <p className="mx-0 arrow2">Swipe up</p>
